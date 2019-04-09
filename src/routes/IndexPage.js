@@ -1,16 +1,20 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './IndexPage.css';
 
-function IndexPage() {
+import { Button } from 'antd-mobile';
+import 'antd-mobile/lib/button/style'
+
+import styles from '../styles/IndexPage/IndexPage.less';
+
+function IndexPage () {
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Hello!</h1>
+    <div>
+      <p className={styles.title}>Hello!</p>
+      <Button type={'primary'}>demo</Button>
     </div>
   );
 }
 
-IndexPage.propTypes = {
-};
+IndexPage.propTypes = {};
 
 export default connect()(IndexPage);

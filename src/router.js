@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Redirect, Route, Router, Switch } from 'dva/router';
 import GlobalHeader from './components/global/GlobalHeader';
 
+import styles from './styles/global/root.less';
+
 function RouterConfig ({history, app}) {
 
   const commonModels = [require('./models/GlobalHeaderModel')];
@@ -17,26 +19,28 @@ function RouterConfig ({history, app}) {
   ];
 
   return (
-    <div className={'g-root'}>
+    <div className={styles['g-root']}>
       <GlobalHeader/>
-      <Router history={history}>
-        <Switch>
-          <Route path={'/'} exact render={() => <Redirect to={'/index'}/>}/>
-          {
-            routes.map(({path, ...dynamics}, key) => (
-              <Route key={key}
-                     exact
-                     path={path}
-                     component={dynamic({
-                       app,
-                       ...dynamics
-                     })}
-              />
-            ))
-          }
-          {/*<Route path={'/'} render={() => <Redirect to={'/error'}/>}/>*/}
-        </Switch>
-      </Router>
+      <div className={styles['g-container']}>
+        <Router history={history}>
+          <Switch>
+            <Route path={'/'} exact render={() => <Redirect to={'/index'}/>}/>
+            {
+              routes.map(({path, ...dynamics}, key) => (
+                <Route key={key}
+                       exact
+                       path={path}
+                       component={dynamic({
+                         app,
+                         ...dynamics
+                       })}
+                />
+              ))
+            }
+            {/*<Route path={'/'} render={() => <Redirect to={'/error'}/>}/>*/}
+          </Switch>
+        </Router>
+      </div>
     </div>
   );
 }

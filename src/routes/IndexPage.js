@@ -7,8 +7,23 @@ import styles from '../styles/IndexPage/IndexPage.less';
 
 function IndexPage () {
   return (
-    <div>
-      <p className={styles.title}>IndexPage</p>
+    <div className={styles['g-main']}>
+      <p className={styles['m-title']}>demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+        demo demo demo demo</p>
+      <div className={styles['m-add']}>
+        +
+      </div>
     </div>
   );
 }

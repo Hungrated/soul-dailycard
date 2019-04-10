@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Soul Dailycard</title>
+  <title>Soul Dailycard | 日·笺</title>
   <meta charset="utf-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-touch-fullscreen" content="yes">
@@ -21,6 +21,7 @@
           document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 10 / 16 * 1000 + '%';
         }
       }
+
       let b = null;
       window.addEventListener('resize', function () {
         clearTimeout(b);
@@ -43,7 +44,7 @@
   </script>
 </head>
 <body>
-<div id="root"></div>
+<div id="root" style="position: relative;"></div>
 <script src="index.js"></script>
 </body>
 </html>

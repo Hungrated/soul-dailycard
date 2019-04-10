@@ -1,11 +1,8 @@
 import dva from 'dva';
-import { createBrowserHistory as createHistory } from 'history';
-
 import './styles/global/base.less';
+// import { createBrowserHistory as createHistory } from 'history';
 
-const app = dva({
-  history: createHistory()
-});
+const app = dva();
 
 // app.use({});
 

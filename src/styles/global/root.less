@@ -1,0 +1,38 @@
+.g-root {
+  position: relative;
+
+  .g-container {
+    background: #eeeeee;
+    width: 100%;
+    height: 90.6vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone X | iPhone XS */
+  .g-root {
+    .g-container {
+      height: 92.3vh;
+    }
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone XS Max */
+  .g-root {
+    .g-container {
+      height: 91.2vh;
+    }
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  /* iPhone XR */
+  .g-root {
+    .g-container {
+      height: 91.2vh;
+    }
+  }
+}

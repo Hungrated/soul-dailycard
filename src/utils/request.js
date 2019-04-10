@@ -1,16 +1,18 @@
 import fetch from 'dva/fetch';
 
-function parseJSON(response) {
+function parseJSON (response) {
   return response.json();
 }
 
-function checkStatus(response) {
+function checkStatus (response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
-
+  console.error(`请求错误 ${response.status}: ${response.url}`,
+    response.statusText);
   const error = new Error(response.statusText);
   error.response = response;
+  console.log(error);
   throw error;
 }
 
@@ -21,10 +23,24 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default function request(url, options) {
-  return fetch(url, options)
+export default function request (url, options) {
+
+  const fullUrl = '' + url;
+
+  const defaultOptions = {
+    credentials: 'include'
+  };
+  const newOptions = {...defaultOptions, ...options};
+
+  newOptions.headers = {
+    'Content-Type': 'application/json; charset=utf-8',
+    'origin': 'localhost:9001',
+    ...newOptions.headers
+  };
+
+  return fetch(fullUrl, newOptions)
     .then(checkStatus)
     .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }));
+    .then(data => ({data}))
+    .catch(err => ({err}));
 }

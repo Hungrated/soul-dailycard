@@ -20,16 +20,26 @@
 
   .g-menu, .g-user {
     flex: 0 0 1rem;
+    opacity: .65;
 
     .inner {
-      border: 1px dotted #eeeeee;
-      border-radius: 50%;
       display: inline-block;
       width: .6rem;
       height: .6rem;
-      vertical-align: middle;
-      font-size: .35rem;
-      line-height: .6rem;
+      position: relative;
+      top: .32rem;
+    }
+  }
+
+  .g-menu {
+    .inner {
+      background: url("../../assets/icon-menu.png") center center/100% 100% no-repeat;
+    }
+  }
+
+  .g-user {
+    .inner {
+      background: url("../../assets/icon-user.png") center center/100% 100% no-repeat;
     }
   }
 
@@ -39,15 +49,11 @@
     .inner {
       display: inline-block;
       vertical-align: middle;
-      height: 90%;
+      height: 95%;
       position: relative;
-      top: .05rem;
+      top: .08rem;
     }
   }
-
-
-
-
 
 
 }

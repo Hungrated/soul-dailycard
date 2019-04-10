@@ -1,33 +1,64 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import styles from '../styles/IndexPage/IndexPage.less';
 
-// import { Button } from 'antd-mobile';
-// import 'antd-mobile/lib/button/style'
+// import { Popover } from 'antd-mobile';
+// import 'antd-mobile/lib/popover/style'
+const mapStateToProps = ({overview}) => ({
+  overview
+});
 
-function IndexPage () {
-  return (
-    <div className={styles['g-main']}>
-      <p className={styles['m-title']}>demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo demo demo demo demo demo demo demo demo demo demo
-        demo demo demo demo</p>
-      <div className={styles['m-add']}>
-        +
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+  dispatcher: {
+    header: {
+      redirect: payload => dispatch({type: 'header/redirect', payload})
+    }
+    // index: {
+    //   fetch: payload => dispatch({type: 'index/fetch', payload})
+    // }
+  }
+});
+
+class IndexPage extends PureComponent {
+
+  state = {};
+
+  componentDidMount () {
+    // this.props.dispatcher.index.fetch();
+  }
+
+  togglePageRedirect = (link) => {
+    this.props.dispatcher.header.redirect({
+      link: link,
+      params: {}
+    });
+  };
+
+  render () {
+    return (
+      <div className={styles['g-main']}>
+        <p className={styles['m-title']}>demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo demo demo demo demo demo demo demo demo demo demo
+          demo demo demo demo</p>
+        <div className={styles['m-edit']}>
+          <span className={styles['inner']} onClick={() => {this.togglePageRedirect('/edit')}}/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 IndexPage.propTypes = {};
 
-export default connect()(IndexPage);
+export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);

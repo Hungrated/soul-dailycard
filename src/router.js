@@ -15,6 +15,36 @@ function RouterConfig ({history, app}) {
       path: '/index',
       models: () => [...commonModels, require('./models/IndexModel')],
       component: () => require('./routes/IndexPage')
+    },
+    {
+      path: '/login',
+      models: () => [...commonModels],
+      component: () => require('./routes/LoginPage')
+    },
+    {
+      path: '/about',
+      models: () => [...commonModels],
+      component: () => require('./routes/AboutPage')
+    },
+    {
+      path: '/user',
+      models: () => [...commonModels],
+      component: () => require('./routes/UserPage')
+    },
+    {
+      path: '/protos',
+      models: () => [...commonModels],
+      component: () => require('./routes/ProtosPage')
+    },
+    {
+      path: '/mycards',
+      models: () => [...commonModels],
+      component: () => require('./routes/MyCardPage')
+    },
+    {
+      path: '/error',
+      models: () => [...commonModels],
+      component: () => require('./routes/ErrorPage')
     }
   ];
 
@@ -37,7 +67,7 @@ function RouterConfig ({history, app}) {
                 />
               ))
             }
-            {/*<Route path={'/'} render={() => <Redirect to={'/error'}/>}/>*/}
+            <Route path={'/'} render={() => <Redirect to={'/error'}/>}/>
           </Switch>
         </Router>
       </div>

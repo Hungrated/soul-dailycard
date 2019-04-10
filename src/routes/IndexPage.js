@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
-import styles from '../styles/IndexPage/IndexPage.less';
+import styles from '../styles/IndexPage.less';
 
 // import { Popover } from 'antd-mobile';
 // import 'antd-mobile/lib/popover/style'
@@ -52,7 +52,8 @@ class IndexPage extends PureComponent {
           demo demo demo demo demo demo demo demo demo demo demo demo demo demo
           demo demo demo demo</p>
         <div className={styles['m-edit']}>
-          <span className={styles['inner']} onClick={() => {this.togglePageRedirect('/edit')}}/>
+          <span className={styles['inner']}
+                onClick={() => {this.togglePageRedirect('/edit');}}/>
         </div>
       </div>
     );

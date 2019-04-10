@@ -20,14 +20,6 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-// const navItems = [
-//   {
-//     key: 'index',
-//     tlt: '主页',
-//     link: '/index'
-//   }
-// ];
-
 class GlobalHeader extends PureComponent {
 
   state = {
@@ -89,27 +81,27 @@ class GlobalHeader extends PureComponent {
         value: 'github',
         name: 'Github详情页',
         link: 'https://github.com/Hungrated/soul-dailycard'
-      },
+      }
     ];
 
     const userOverlayItems = [
       {
         key: '2-1',
-        value: 'userdata',
+        value: 'user',
         name: '我的资料',
-        link: '/userdata'
+        link: '/user'
       },
       {
         key: '2-2',
-        value: 'portfolios',
+        value: 'mycards',
         name: '我的卡片',
-        link: '/portfolios'
+        link: '/mycards'
       },
       {
         key: '2-3',
         value: 'prototypes',
         name: '我的模板',
-        link: '/prototypes'
+        link: '/protos'
       }
     ];
 
@@ -117,7 +109,7 @@ class GlobalHeader extends PureComponent {
       <div className={styles['g-header']}>
         <div className={styles['g-menu']}>
           <span className={styles['inner']}
-                onClick={() => {this.handleMenuVisibleChange(true)}}/>
+                onClick={() => {this.handleMenuVisibleChange(true);}}/>
           <Popover mask
                    overlayClassName="popover-menu"
                    overlayStyle={{color: 'currentColor'}}
@@ -149,12 +141,12 @@ class GlobalHeader extends PureComponent {
         <div className={styles['g-logo']}>
           <img className={styles['inner']}
                src={require('../../assets/logo-header-w.png')}
-               alt={'logo'} onClick={() => {this.togglePageRedirect('/index')}}
+               alt={'logo'} onClick={() => {this.togglePageRedirect('/index');}}
           />
         </div>
         <div className={styles['g-user']}>
           <span className={styles['inner']}
-                onClick={() => {this.handleUserVisibleChange(true)}}/>
+                onClick={() => {this.handleUserVisibleChange(true);}}/>
           <Popover mask
                    overlayClassName="popover-user"
                    overlayStyle={{color: 'currentColor'}}

@@ -1,6 +1,7 @@
 import dva from 'dva';
-import './styles/global/base.less';
 // import { createBrowserHistory as createHistory } from 'history';
+
+import './styles/global/base.less';
 
 const app = dva();
 

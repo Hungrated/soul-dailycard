@@ -3,7 +3,6 @@ import { connect } from 'dva';
 import styles from '../../styles/global/GlobalHeader.less';
 
 import { Popover } from 'antd-mobile';
-import 'antd-mobile/lib/popover/style';
 
 const Item = Popover.Item;
 

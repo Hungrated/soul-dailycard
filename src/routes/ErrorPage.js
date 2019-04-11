@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import styles from '../styles/ErrorPage.less';
 
-// import { Popover } from 'antd-mobile';
-// import 'antd-mobile/lib/popover/style'
+import { Button } from 'antd-mobile';
+
 const mapStateToProps = ({overview}) => ({
   overview
 });
@@ -38,7 +38,13 @@ class ErrorPage extends PureComponent {
   render () {
     return (
       <div className={styles['g-main']}>
-        error page
+        <p className={styles['m-title']}>寻寻觅觅&nbsp;/&nbsp;冷冷清清</p>
+        <p className={styles['m-homebutton']}>
+          <Button className={styles['inner']} type={'primary'}
+                  onClick={() => {this.togglePageRedirect('/index')}}>
+            返回主页
+          </Button>
+        </p>
       </div>
     );
   }
